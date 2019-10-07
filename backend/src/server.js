@@ -1,6 +1,8 @@
 // Imports
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
+
 
 const routes = require('./routes');
 
@@ -11,6 +13,7 @@ mongoose.connect('mongodb+srv://omnistack:omnistack@omnistack9-8h5vf.mongodb.net
 })
 
 // Rotas
+app.use(cors());
 app.use(express.json());
 app.use(routes);
 
